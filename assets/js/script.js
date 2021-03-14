@@ -1,5 +1,14 @@
 // Assignment code here
 
+//Created password characters here:
+var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
+var numChar = '0123456789';
+var specialChar = '!"#$%&()*+,-./:;<=>?@[\]^_`{|}~';
+
+//Create array to store password characters in 
+charArray = [upperCase, lowerCase, numChar, specialChar];
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
