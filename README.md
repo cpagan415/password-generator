@@ -1,4 +1,4 @@
-# password-generator
+# Password Generator
 
 
 Decided to create the password generator with strings. 
