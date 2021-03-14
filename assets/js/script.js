@@ -13,9 +13,10 @@ var userLength;
 //empty string to hold user password character choices 
 var sumChar = '';
 
-function checkLength(userLength)
+function checkLength()
 {
   userLength = prompt('Please choose a password length from 8 to 128.');
+  userLength = parseInt(userLength);
 
   if(userLength < 8 || userLength > 128 || userLength === null)
   {
@@ -27,6 +28,7 @@ function checkLength(userLength)
     userChoices();
     //continuing program here
   }
+  return userLength;
 }
 
 function userChoices()
@@ -52,12 +54,19 @@ for(i = 0; i < emptyArray.length; i++)
 {
   sumChar = sumChar + emptyArray[i];
 }
+return sumChar;
 }
 
 function generatePassword()
 {
   checkLength();
-  console.log(sumChar);
+  //now to mix the characters into a randomly generated password based on user choices 
+  var genPassword = '';
+  for(i = 0; i < userLength; i++)
+  {
+    genPassword = genPassword + sumChar.charAt(Math.floor(Math.random() * sumChar.length));
+  }
+  return genPassword;
 }
 
 
