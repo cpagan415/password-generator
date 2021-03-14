@@ -10,6 +10,8 @@ var specialChar = '!"#$%&()*+,-./:;<=>?@[\]^_`{|}~';
 charArray = [upperCase, lowerCase, numChar, specialChar];
 //creating global variable for password length
 var userLength;
+//empty string to hold user password character choices 
+var sumChar = '';
 
 function checkLength(userLength)
 {
@@ -36,14 +38,26 @@ var userNum = confirm("Would you like to have numbers?");
 var userSpec = confirm("Would you like to have special characters?");
 //storing user choices in an array
 userChoice = [userUpper, userLower, userNum, userSpec];
-//creating an empty array to add user passward character options below 
+//creating an empty array to add user password character options below 
 emptyArray = [];
 
+for( i = 0; i < userChoice.length; i++)
+{
+  if(userChoice[i] === true)
+  emptyArray.push(charArray[i]);
+  //above will add the password character strings to an empty array
+}
+//this for loop below will add all of the wanted characters together in a string variable
+for(i = 0; i < emptyArray.length; i++)
+{
+  sumChar = sumChar + emptyArray[i];
+}
 }
 
 function generatePassword()
 {
   checkLength();
+  console.log(sumChar);
 }
 
 
